@@ -37,8 +37,8 @@ public class Main extends HttpServlet {
             throws ServletException, IOException {
         //---
         String imprimir =ContadorClases.buscarArchivo();
-        resp.getWriter().print("Hello from Java!");
-        resp.getWriter().print("<br/>");
+//        resp.getWriter().print("Hello from Java!");
+//        resp.getWriter().print("<br/>");
         resp.getWriter().print(imprimir);
     }
 }

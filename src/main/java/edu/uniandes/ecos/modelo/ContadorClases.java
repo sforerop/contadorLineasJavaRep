@@ -26,7 +26,7 @@ public class ContadorClases {
                 + "///////////Detallado///////////// \n"
                 + detalle+"\n"
                 + "/////////////////////////////////";
-        return "";
+        return resultado;
     }
 
     /**
