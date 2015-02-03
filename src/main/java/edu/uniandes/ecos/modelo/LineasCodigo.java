@@ -16,16 +16,20 @@ import java.util.ArrayList;
  */
 public class LineasCodigo {
 
-    public static void leerArchivos(ArrayList<File> clases) {
+    public static String leerArchivos(ArrayList<File> clases) {
+        String detalle = "";
         System.out.println("El proyecto leido tiene "+clases.size()+ " Clases .java");
         System.out.println("-//////////Detallado/////////////");
         for (File clase : clases) {
             int lineas = 0;
             lineas = LineasContadasen(clase);
             System.out.println(clase.getName() + " tiene  " + lineas +" lineas.");
+            detalle += clase.getName() + " tiene  " + lineas +" lineas. \n"
+                    + "------------------------------\n";
             System.out.println("------------------------------");
         }
         System.out.println("/////////////////////////////////");
+        return detalle;
     }
 
     public static int LineasContadasen(File file) {

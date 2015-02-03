@@ -17,10 +17,16 @@ public class ContadorClases {
 
     private static ArrayList<File> clases = new ArrayList<File>();
 
-    public static void buscarArchivo() {
+    public static String buscarArchivo() {
         File raiz = new File("../contadorLineasJava/src/main/resources/source");
         recorrerCarpeta(raiz);
-        LineasCodigo.leerArchivos(clases);
+        String detalle = LineasCodigo.leerArchivos(clases);
+        int tamanio = clases.size();
+        String resultado = "El proyecto leido tiene "+tamanio+ " Clases .java \n"
+                + "///////////Detallado///////////// \n"
+                + detalle+"\n"
+                + "/////////////////////////////////";
+        return "";
     }
 
     /**
