@@ -24,7 +24,10 @@ public class Main extends HttpServlet {
         server.setHandler(context);
         context.addServlet(new ServletHolder(new Main()), "/*");
         server.start();
-        server.join();     
+        server.join();
+        
+        //---
+        ContadorClases.buscarArchivo();
     }
     
    @Override
@@ -35,10 +38,6 @@ public class Main extends HttpServlet {
 
     private void showHome(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        //---
-        String imprimir =ContadorClases.buscarArchivo();
-//        resp.getWriter().print("Hello from Java!");
-//        resp.getWriter().print("<br/>");
-        resp.getWriter().print(imprimir);
+        resp.getWriter().print("Hello from Java!");
     }
 }
