@@ -2,6 +2,7 @@ package edu.uniandes.ecos;
 
 import edu.uniandes.ecos.modelo.ContadorClases;
 import java.io.IOException;
+import java.net.URL;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,13 +26,13 @@ public class Main extends HttpServlet {
         context.addServlet(new ServletHolder(new Main()), "/*");
         server.start();
         server.join();
-        
-        texto = ContadorClases.buscarArchivo();
     }
     
    @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
+      URL ruta = this.getServletContext().getResource("../contadorLineasJava/src/main/resources/source");
+      texto = ContadorClases.buscarArchivo(ruta);
       showHome(req,resp);
   }
 

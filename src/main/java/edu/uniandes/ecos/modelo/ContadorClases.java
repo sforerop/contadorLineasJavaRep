@@ -7,6 +7,7 @@ package edu.uniandes.ecos.modelo;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -17,8 +18,10 @@ public class ContadorClases {
 
     private static ArrayList<File> clases = new ArrayList<File>();
 
-    public static String buscarArchivo() {
-        File raiz = new File("..\\contadorLineasJava\\src\\main\\resources\\source");
+    public static String buscarArchivo(URL ruta) {
+        System.out.println(ruta.getPath());
+        System.out.println(ruta.getFile());
+        File raiz = new File(ruta.getPath());
         recorrerCarpeta(raiz);
         String detalle = LineasCodigo.leerArchivos(clases);
         int tamanio = clases.size();
@@ -36,15 +39,12 @@ public class ContadorClases {
      */
     public static void recorrerCarpeta(File raiz) {
         raiz = raiz.getAbsoluteFile();
-        System.out.println("entro al metodo! " + raiz.getAbsolutePath());
         File[] archivos = raiz.listFiles(new FilenameFilter() {
             public boolean accept(File file, String string) {
                 if (string.endsWith(".java")) {
-                    System.out.println("encontro clase java");
                     clases.add(new File(file + "/" + string));
                 } else {
                     if (file.isDirectory()) {
-                        System.out.println("entro denuevo al metodo");
                         recorrerCarpeta(new File(file + "/" + string));
                     }
                 }
