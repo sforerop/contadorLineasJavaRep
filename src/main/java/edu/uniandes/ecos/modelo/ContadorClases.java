@@ -18,8 +18,8 @@ public class ContadorClases {
 
     private static ArrayList<File> clases = new ArrayList<File>();
 
-    public static String buscarArchivo() {
-        
+    public static String buscarArchivo(String ruta) {
+        System.out.println("EsTaEsLaRuTa "+ruta);
         File raiz = new File("../source");
         recorrerCarpeta(raiz);
         String detalle = LineasCodigo.leerArchivos(clases);
