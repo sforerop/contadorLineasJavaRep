@@ -26,7 +26,8 @@ public class Main extends HttpServlet {
         context.addServlet(new ServletHolder(new Main()), "/*");
         server.start();
         server.join();
-        texto = ContadorClases.buscarArchivo();
+        String ruta = context.getCurrentContext().getRealPath("/");
+        texto = ContadorClases.buscarArchivo(ruta);
     }
     
    @Override
