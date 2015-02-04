@@ -31,7 +31,7 @@ public class Main extends HttpServlet {
    @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-      URL ruta = this.getServletContext().getResource("../contadorLineasJava/src/main/resources/source");
+      String ruta = this.getServletContext().getRealPath("/");
       texto = ContadorClases.buscarArchivo(ruta);
       showHome(req,resp);
   }

@@ -18,10 +18,9 @@ public class ContadorClases {
 
     private static ArrayList<File> clases = new ArrayList<File>();
 
-    public static String buscarArchivo(URL ruta) {
-        System.out.println(ruta.getPath());
-        System.out.println(ruta.getFile());
-        File raiz = new File(ruta.getPath());
+    public static String buscarArchivo(String ruta) {
+        System.out.println(ruta);
+        File raiz = new File(ruta+"main/resources/source");
         recorrerCarpeta(raiz);
         String detalle = LineasCodigo.leerArchivos(clases);
         int tamanio = clases.size();
