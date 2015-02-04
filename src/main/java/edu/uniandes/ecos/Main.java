@@ -39,7 +39,7 @@ public class Main extends HttpServlet {
             throws ServletException, IOException {
 //        resp.getWriter().print("Hello from Java!");
         //---
-        texto = ContadorClases.buscarArchivo(req.getRealPath("/"));
+        texto = ContadorClases.buscarArchivo(req.getContextPath());
         resp.getWriter().print(texto);
     }
 }
