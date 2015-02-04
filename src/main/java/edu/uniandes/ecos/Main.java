@@ -31,7 +31,8 @@ public class Main extends HttpServlet {
    @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-      String ruta = this.getServletContext().getRealPath("/");
+      req.getContextPath();
+      String ruta = req.getContextPath();
       texto = ContadorClases.buscarArchivo(ruta);
       showHome(req,resp);
   }
