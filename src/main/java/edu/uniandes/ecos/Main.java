@@ -26,12 +26,12 @@ public class Main extends HttpServlet {
         context.addServlet(new ServletHolder(new Main()), "/*");
         server.start();
         server.join();
+        texto = ContadorClases.buscarArchivo();
     }
     
    @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-      texto = ContadorClases.buscarArchivo();
       showHome(req,resp);
   }
 
