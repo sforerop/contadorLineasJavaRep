@@ -35,13 +35,15 @@ public class ContadorClases {
      * @param raiz
      */
     public static void recorrerCarpeta(File raiz) {
+        System.out.println("entro al metodo!");
         File[] archivos = raiz.listFiles(new FilenameFilter() {
             public boolean accept(File file, String string) {
-
                 if (string.endsWith(".java")) {
+                    System.out.println("encontro clase java");
                     clases.add(new File(file + "/" + string));
                 } else {
                     if (file.isDirectory()) {
+                        System.out.println("entro denuevo al metodo");
                         recorrerCarpeta(new File(file + "/" + string));
                     }
                 }
