@@ -36,7 +36,7 @@ public class ContadorClases {
      */
     public static void recorrerCarpeta(File raiz) {
         raiz = raiz.getAbsoluteFile();
-        System.out.println("entro al metodo! " + raiz.getName());
+        System.out.println("entro al metodo! " + raiz.getAbsolutePath());
         File[] archivos = raiz.listFiles(new FilenameFilter() {
             public boolean accept(File file, String string) {
                 if (string.endsWith(".java")) {
