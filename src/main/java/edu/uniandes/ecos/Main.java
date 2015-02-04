@@ -44,6 +44,7 @@ public class Main extends HttpServlet {
         System.out.println("Ruta 3: " + req.getServletPath());
         System.out.println("Ruta 4: "+ this.getServletContext().getContextPath());
         System.out.println("Ruta 5: "+ this.getServletContext().getRealPath("/"));
+        System.out.println("Ruta 5: "+ this.getClass().getResource("../source").getFile());
         texto = ContadorClases.buscarArchivo(req.getServletPath());
         resp.getWriter().print(texto);
     }
