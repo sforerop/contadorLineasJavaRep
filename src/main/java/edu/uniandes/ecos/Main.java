@@ -16,7 +16,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
  *
  */
 public class Main extends HttpServlet {
-
+    public static String texto= "";
     public static void main(String[] args) throws Exception {
         Server server = new Server(Integer.valueOf(System.getenv("PORT")));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -26,7 +26,7 @@ public class Main extends HttpServlet {
         server.start();
         server.join();
         
-        
+        texto = ContadorClases.buscarArchivo();
     }
     
    @Override
@@ -39,6 +39,6 @@ public class Main extends HttpServlet {
             throws ServletException, IOException {
 //        resp.getWriter().print("Hello from Java!");
         //---
-        resp.getWriter().print(ContadorClases.buscarArchivo());
+        resp.getWriter().print(texto);
     }
 }
