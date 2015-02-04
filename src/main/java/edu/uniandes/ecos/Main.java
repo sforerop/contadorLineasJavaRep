@@ -37,15 +37,15 @@ public class Main extends HttpServlet {
 
     private void showHome(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-//        resp.getWriter().print("Hello from Java!");
-        //---
-        System.out.println("Ruta 1: " + req.getRealPath("../source"));
-        System.out.println("Ruta 2: "+ req.getContextPath());
-        System.out.println("Ruta 3: " + req.getServletPath());
-        System.out.println("Ruta 4: "+ this.getServletContext().getContextPath());
-        System.out.println("Ruta 5: "+ resp.getClass().getResource("../resource"));
-
-        texto = ContadorClases.buscarArchivo(req.getServletPath());
-        resp.getWriter().print(texto);
+        resp.getWriter().print("Contador de lineas de codigo!");
+//        //---
+//        System.out.println("Ruta 1: " + req.getRealPath("../source"));
+//        System.out.println("Ruta 2: "+ req.getContextPath());
+//        System.out.println("Ruta 3: " + req.getServletPath());
+//        System.out.println("Ruta 4: "+ this.getServletContext().getContextPath());
+//        System.out.println("Ruta 5: "+ resp.getClass().getResource("../resource"));
+//
+        ContadorClases.buscarArchivo();
+//        resp.getWriter().print(texto);
     }
 }
