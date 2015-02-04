@@ -18,7 +18,7 @@ public class ContadorClases {
     private static ArrayList<File> clases = new ArrayList<File>();
 
     public static String buscarArchivo() {
-        File raiz = new File("../contadorLineasJava/src/main/resources/source");
+        File raiz = new File("https://github.com/sforerop/contadorLineasJavaRep/tree/master/src/main/resources/source");
         recorrerCarpeta(raiz);
         String detalle = LineasCodigo.leerArchivos(clases);
         int tamanio = clases.size();
